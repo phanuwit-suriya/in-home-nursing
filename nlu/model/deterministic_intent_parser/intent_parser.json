@@ -1,0 +1,30 @@
+{
+  "config": {
+    "max_pattern_length": 1000,
+    "max_queries": 100,
+    "unit_name": "deterministic_intent_parser"
+  },
+  "group_names_to_slot_names": {
+    "group_0": "origin",
+    "group_1": "destination",
+    "group_2": "date",
+    "group_3": "destination",
+    "group_4": "destination",
+    "group_5": "date"
+  },
+  "language_code": "en",
+  "patterns": {
+    "searchFlight": [
+      "^\\s*find\\s*me\\s*a\\s*flight\\s*from\\s*(?P<group_0>%CITY%)\\s*to\\s*(?P<group_1>%CITY%)\\s*$",
+      "^\\s*I\\s*need\\s*a\\s*flight\\s*leaving\\s*(?P<group_2>%SNIPSDATETIME%)\\s*to\\s*(?P<group_3>%CITY%)\\s*$",
+      "^\\s*show\\s*me\\s*flights\\s*to\\s*go\\s*to\\s*(?P<group_4>%CITY%)\\s*leaving\\s*(?P<group_5>%SNIPSDATETIME%)\\s*$"
+    ]
+  },
+  "slot_names_to_entities": {
+    "searchFlight": {
+      "date": "snips/datetime",
+      "destination": "city",
+      "origin": "city"
+    }
+  }
+}

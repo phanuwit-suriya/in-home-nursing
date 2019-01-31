@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "city": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "london"
+        },
+        {
+          "synonyms": [
+            "big apple"
+          ],
+          "value": "new york"
+        },
+        {
+          "synonyms": [
+            "city of lights"
+          ],
+          "value": "paris"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "snips/datetime": {}
+  },
+  "intents": {
+    "searchFlight": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "find me a flight from "
+            },
+            {
+              "entity": "city",
+              "slot_name": "origin",
+              "text": "london"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "city",
+              "slot_name": "destination",
+              "text": "new york"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I need a flight leaving "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "Today"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "city",
+              "slot_name": "destination",
+              "text": "big apple"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me flights to go to "
+            },
+            {
+              "entity": "city",
+              "slot_name": "destination",
+              "text": "paris"
+            },
+            {
+              "text": " leaving "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "at 8 a.m."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}

@@ -1,0 +1,30 @@
+# type: allows to differentiate between entities and intents files
+# name: name of the entity
+# automatically_extensible(true/false): default value is true
+# use_synonyms(true/false): default value is true
+# matching_strictness[0, 1.0]: default value is 1.0
+
+# searhFlight Intent
+---
+type: intent
+name: searchFlight
+slots:
+  - name: origin
+    entity: city
+  - name: destination
+    entity: city
+  - name: date
+    entity: snips/datetime
+utterances:
+  - find me a flight from [origin] to [destination]
+  - I need a flight leaving [date] to [destination]
+  - show me flights to go to [destination] leaving [date]
+
+# City Entity
+---
+type: entity
+name: city
+values:
+  - london
+  - [new york, big apple]
+  - [paris, city of lights]

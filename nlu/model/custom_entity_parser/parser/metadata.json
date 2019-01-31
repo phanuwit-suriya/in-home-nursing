@@ -1,0 +1,8 @@
+{
+  "parsers_metadata": [
+    {
+      "entity_identifier": "city",
+      "entity_parser": "parser_1"
+    }
+  ]
+}
